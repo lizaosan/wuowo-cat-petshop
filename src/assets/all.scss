@@ -1,0 +1,3 @@
+@import "~bootstrap/scss/functions"; // 載入 bootstrap 的 套用變數的方法
+@import "./helpers/variables";
+@import "~bootstrap/scss/bootstrap"; // 載入 bootstrap 的 modemodule 然後載入 scss 裡的 bootstrap.scss

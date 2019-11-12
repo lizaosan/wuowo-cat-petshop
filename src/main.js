@@ -1,6 +1,12 @@
 import Vue from 'vue'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+/* 以上是 npm 下載套件 */
 import App from './App.vue'
 import router from './router'
+/* 以上是網站的內容 */
+
+Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
 
