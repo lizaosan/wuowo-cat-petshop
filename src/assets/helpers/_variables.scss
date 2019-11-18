@@ -45,7 +45,8 @@ $green:   #28a745 !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
-$peach-puff	:   #FFDAB9;
+$peach-puff:   #D9A97E;
+$light-peach-puff:#FFF7F0;
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -64,19 +65,32 @@ $colors: map-merge(
     "white":      $white,
     "gray":       $gray-600,
     "gray-dark":  $gray-800,
-    "peach-puff	":      $peach-puff	
+    "peach-puff": $peach-puff,
   ),
   $colors
 );
 
-$primary:       $peach-puff	; //$blue !default;
-$secondary:     $gray-600 !default;
+$primary:       $peach-puff; //$blue !default;
+$secondary:     $light-peach-puff; //$gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
 $warning:       $yellow !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+
+$color-primary-0: #FFDAB9;	// Main Primary color */
+$color-primary-1: #FFF7F0;
+$color-primary-2: #FFEAD8;
+$color-primary-3: #D9A97E;
+$color-primary-4: #B17948;
+
+$color-secondary-1-0: #FFE2B9;	// Main Secondary color (1) */
+$color-secondary-1-1: #FFF9F0;
+$color-secondary-1-2: #FFEFD8;
+$color-secondary-1-3: #D9B37E;
+$color-secondary-1-4: #B18548;
+
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -89,7 +103,7 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    "dark":       $dark,
   ),
   $theme-colors
 );
@@ -174,10 +188,10 @@ $body-color:                $gray-900 !default;
 
 $link-color:                              theme-color("primary") !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-color:                        darken($link-color, 30%) !default;
 $link-hover-decoration:                   underline !default;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
-$emphasized-link-hover-darken-percentage: 15% !default;
+$emphasized-link-hover-darken-percentage: 30% !default;
 
 // Paragraphs
 //
@@ -318,7 +332,7 @@ $display-line-height:         $headings-line-height !default;
 $lead-font-size:              $font-size-base * 1.25 !default;
 $lead-font-weight:            300 !default;
 
-$small-font-size:             80% !default;
+$small-font-size:             90% !default;
 
 $text-muted:                  $gray-600 !default;
 
