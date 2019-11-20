@@ -59,6 +59,6 @@ export default {
 }
 
 .fas {
-  color: #D9A97E;
+  color: #B16948;
 }
 </style>
