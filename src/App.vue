@@ -9,7 +9,7 @@
 export default {
   name: 'app',
   metaInfo: {
-    title: '窩窩',
+    title: '窩窩 ╳ 貓所在乎的 窩窩都知道',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }
