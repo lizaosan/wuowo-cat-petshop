@@ -80,7 +80,8 @@
 export default {
   data () {
     return {
-      products: []
+      products: [],
+      random4: []
     }
   },
   methods: {
@@ -90,7 +91,24 @@ export default {
       this.$http.get(api).then((response) => {
         console.log('來自 RandomProduct.vue 的 console', response.data)
         vm.products = response.data.products
+        this.getRandom(this.products, 4)
       })
+    },
+    getRandom (arr, count) {
+      let shuffled = arr.slice(0)
+      let i = arr.length
+      let min = i - count
+      let temp
+      let index
+      while (i-- > min) {
+        index = Math.floor((i + 1) * Math.random())
+        temp = shuffled[index]
+        shuffled[index] = shuffled[i]
+        shuffled[i] = temp
+      }
+      this.random4 = shuffled.slice(min)
+      console.log(shuffled.slice(min))
+      // getRandom 參考 https://blog.csdn.net/web_leeleon/article/details/80308727
     }
   },
   created () {
