@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="container-fluid">
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row align-items-center">
       <div class="col-12 col-md">

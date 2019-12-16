@@ -8,8 +8,15 @@
 
 export default {
   name: 'app',
+  metaInfo: {
+    title: '窩窩',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    ]
+  },
   created () {
-    console.log(process.env.VUE_APP_TESTING)
+    console.log('目前使用的環境變數', process.env.VUE_APP_TESTING)
   }
 }
 </script>
@@ -35,5 +42,9 @@ export default {
       color: #42b983;
     }
   }
+}
+
+.container{
+  margin:0 auto;
 }
 </style>
