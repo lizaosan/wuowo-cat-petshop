@@ -19,17 +19,17 @@
             <div class="collapse navbar-collapse order-sm-2 order-md-1" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-primary small" @click="paw = 'food'" href="#">
+                        <a class="nav-link text-primary" @click="paw = 'food'" href="#">
                             <i class="fas" :class="{'fa-paw': paw == 'food'}"></i> 貓咪食品
                         </a>
                     </li>
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-primary small" @click="paw = 'supply'" href="#">
+                        <a class="nav-link text-primary" @click="paw = 'supply'" href="#">
                             <i class="fas" :class="{'fa-paw': paw == 'supply'}"></i> 貓咪居家
                         </a>
                     </li>
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-primary small" @click="paw = 'clean'" href="#">
+                        <a class="nav-link text-primary" @click="paw = 'clean'" href="#">
                             <i class="fas" :class="{'fa-paw': paw == 'clean'}"></i> 貓咪清潔
                         </a>
                     </li>

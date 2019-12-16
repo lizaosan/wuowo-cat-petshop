@@ -1,10 +1,10 @@
 <template>
     <div class="container mt-2">
       <div class="row">
-        <div class="col-12 mt-2 mb-2 title">
+        <div class="col-12 mt-2 title">
           <h4>推薦商品</h4>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 mb-2">
+        <a href="#" class="col-12 col-md-6 col-lg-3 mb-2 pt-3">
           <div href="#" class="card border-0">
             <img src="../assets/petcurean-01.jpg" alt="" class="card-img-top">
             <div class="card-body">
@@ -20,8 +20,8 @@
               <button class="btn btn-primary btn-block text-white mr-1"><i class="fas fa-paw"></i> 查看詳情</button>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mb-2">
+        </a>
+        <a href="#" class="col-12 col-md-6 col-lg-3 mb-2 pt-3">
           <div href="#" class="card border-0">
             <img src="../assets/kitcat-01.jpg" alt="" class="card-img-top">
             <div class="card-body">
@@ -37,8 +37,8 @@
               <button class="btn btn-primary btn-block text-white mr-1"><i class="fas fa-paw"></i> 查看詳情</button>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mb-2">
+        </a>
+        <a href="#" class="col-12 col-md-6 col-lg-3 mb-2 pt-3">
           <div href="#" class="card border-0">
             <img src="../assets/cattoy-01.jpg" alt="" class="card-img-top">
             <div class="card-body">
@@ -54,8 +54,8 @@
               <button class="btn btn-primary btn-block text-white mr-1"><i class="fas fa-paw"></i> 查看詳情</button>
             </div>
           </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3 mb-2">
+        </a>
+        <a href="#" class="col-12 col-md-6 col-lg-3 mb-2 pt-3">
           <div href="#" class="card border-0">
             <img src="../assets/cattree-01.jpg" alt="" class="card-img-top">
             <div class="card-body">
@@ -71,7 +71,7 @@
               <button class="btn btn-primary btn-block text-white mr-1"><i class="fas fa-paw"></i> 查看詳情</button>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 </template>
@@ -115,5 +115,11 @@ export default {
 }
 .fas {
   color: rgb(255, 255, 255);
+}
+a:hover {
+  text-decoration:none;
+  transform: scale(1.02);
+  box-shadow: 2px 2px 8px #999;
+  transition: transform 0.2s ease-out;
 }
 </style>
