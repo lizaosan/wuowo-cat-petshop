@@ -4,7 +4,7 @@
         <div class="col-12 mt-2 title">
           <h4>熱賣商品</h4>
         </div>
-        <div href="#" class="col-12 col-md-6 col-lg-3 mb-2 pt-3" v-for="item in random4" :key="item.id">
+        <div class="col-12 col-md-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in random4" :key="item.id">
           <div href="#" class="card border-0">
             <img :src="item.image" alt="" class="card-img-top">
             <div class="card-body">
@@ -85,7 +85,7 @@ export default {
 .fas {
   color: rgb(255, 255, 255);
 }
-a:hover {
+.shade-effect:hover {
   text-decoration:none;
   transform: scale(1.02);
   box-shadow: 2px 2px 8px #999;
