@@ -9,7 +9,7 @@
       <div class="col-6 col-md">
         <h5>About</h5>
         <ul class="list-unstyled small">
-          <li><a href="#">此網站專案為個人前端作品</a></li>
+          <li><a href="https://github.com/lizaosan/wuowo-cat-petshop" target="_blank">此網站專案為個人前端作品</a></li>
         </ul>
       </div>
     </div>
