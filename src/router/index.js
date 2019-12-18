@@ -3,6 +3,8 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import Main from '../views/Main.vue'
+import Food from '../views/food.vue'
 import VueMeta from 'vue-meta'
 
 Vue.use(VueRouter)
@@ -13,7 +15,19 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: '/',
+        name: 'main',
+        component: Main
+      },
+      {
+        path: '/food',
+        name: 'food',
+        component: Food
+      }
+    ]
   },
   {
     path: '/about',

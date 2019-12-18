@@ -47,4 +47,8 @@ export default {
 .container{
   margin:0 auto;
 }
+
+div {
+  font-family:"Microsoft JhengHei";
+}
 </style>

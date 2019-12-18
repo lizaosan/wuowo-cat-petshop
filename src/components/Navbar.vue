@@ -1,9 +1,9 @@
 <template>
     <nav class="mb-1 navbar navbar-expand-md navbar-light bg-lignt">
         <div class="container">
-            <a class="navbar-brand  mr-4" @click="paw = ''" href="#">
+            <router-link class="navbar-brand  mr-4" @click="paw = ''" to="/">
                 <img src="../assets/storeIcon.svg" width="120" height="45" class="d-inline-block align-top">
-            </a>
+            </router-link>
             <div class="d-flex flex-row order-sm-1 order-md-2">
                 <ul class="navbar-nav sub-nav flex-row mr-1">
                     <li class="nav-item">
@@ -19,9 +19,9 @@
             <div class="collapse navbar-collapse order-sm-2 order-md-1" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-primary" @click="paw = 'food'" href="#">
+                        <router-link class="nav-link text-primary" @click.native="paw = 'food'" to="/food">
                             <i class="fas" :class="{'fa-paw': paw == 'food'}"></i> 貓咪食品
-                        </a>
+                        </router-link>
                     </li>
                     <li class="nav-item mr-4">
                         <a class="nav-link text-primary" @click="paw = 'supply'" href="#">

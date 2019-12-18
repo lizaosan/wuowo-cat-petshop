@@ -8,11 +8,11 @@
           <div href="#" class="card border-0">
             <img :src="item.image" alt="" class="card-img-top">
             <div class="card-body">
-              <h6 class="card-title" style="height: 24px;">{{item.title}}</h6>
-              <h5 class="card-text">
+              <h6 class="card-title" style="height: 36px;">{{item.title}}</h6>
+              <h5 class="card-text" style="height: 20px;">
                 <div class="d-flex justify-content-between align-items-baseline" v-if="item.origin_price !== item.price">
                   <del>原價 {{ item.origin_price }} 元</del>
-                  <div class="badge float-right text-danger">特價 {{ item.price }} 元</div>
+                  <strong class="float-right text-danger">特價 {{ item.price }} 元</strong>
                 </div>
                 <div class="d-flex justify-content-between align-items-baseline" v-if="item.origin_price == item.price">
                   <div>定價 {{ item.price }} 元</div>
@@ -72,14 +72,16 @@ export default {
 
 .card-title{
   text-align: left;
-  font-size: 14px;
+  font-size: 1.1rem;
+}
+.card-body{
+  padding: 20px 0px 20px 0px;
 }
 .card-text{
   text-align: left;
-  font-size: 12px
+  font-size: 1rem
 }
 .title {
-  font-family:"Microsoft JhengHei";
   letter-spacing: 4px;
 }
 .fas {
