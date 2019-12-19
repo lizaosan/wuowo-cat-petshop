@@ -1,7 +1,7 @@
 <template>
     <nav class="mb-1 navbar navbar-expand-md navbar-light bg-lignt">
         <div class="container">
-            <router-link class="navbar-brand  mr-4" @click="paw = ''" to="/">
+            <router-link class="navbar-brand  mr-4" @click.native="paw = ''" to="/">
                 <img src="../assets/storeIcon.svg" width="120" height="45" class="d-inline-block align-top">
             </router-link>
             <div class="d-flex flex-row order-sm-1 order-md-2">
