@@ -12,7 +12,7 @@ import ParallaxScroll from '@/components/ParallaxScroll.vue'
 import RandomProduct from '@/components/RandomProduct.vue'
 
 export default {
-  name: 'main',
+  name: 'mainpage',
   components: {
     Carousel,
     ParallaxScroll,

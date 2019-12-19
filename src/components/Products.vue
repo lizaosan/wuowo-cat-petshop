@@ -4,12 +4,12 @@
         <div class="col-12 mt-2 title">
           <h4>{{ title }}</h4>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in products" :key="item.id">
+        <div class="col-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in filteredProducts" :key="item.id">
           <div href="#" class="card border-0">
             <img :src="item.image" alt="" class="card-img-top">
             <div class="card-body">
-              <h6 class="card-title" style="height: 36px;">{{item.title}}</h6>
-              <h5 class="card-text" style="height: 20px;">
+              <h6 class="card-title" style="height: 3rem; font-size: 1rem">{{item.title}}</h6>
+              <h5 class="card-text" style="height: 1rem; font-size: 0.9rem">
                 <div class="d-flex justify-content-between align-items-baseline" v-if="item.origin_price !== item.price">
                   <del>原價 {{ item.origin_price }} 元</del>
                   <strong class="float-right text-danger">特價 {{ item.price }} 元</strong>
@@ -33,8 +33,9 @@ export default {
   data () {
     return {
       title: '貓咪食品',
+      category: 'food',
       products: [],
-      random4: []
+      filteredProducts: []
     }
   },
   methods: {
@@ -44,23 +45,14 @@ export default {
       this.$http.get(api).then((response) => {
         console.log('來自 RandomProduct.vue 的 console', response.data)
         vm.products = response.data.products
-        this.getRandom(this.products, 4)
+        this.getFiltered()
       })
     },
-    getRandom (arr, count) {
-      let shuffled = arr.slice(0)
-      let i = arr.length
-      let min = i - count
-      let temp
-      let index
-      while (i-- > min) {
-        index = Math.floor((i + 1) * Math.random())
-        temp = shuffled[index]
-        shuffled[index] = shuffled[i]
-        shuffled[i] = temp
-      }
-      this.random4 = shuffled.slice(min)
-      // getRandom 參考 https://blog.csdn.net/web_leeleon/article/details/80308727
+    getFiltered () {
+      this.filteredProducts = this.products.filter(function (item, index, array) {
+        return item.category === '貓咪食品'
+      })
+      // 陣列內物件回傳參考資料 https://wcc723.github.io/javascript/2017/06/29/es6-native-array/#Array-prototype-filter
     }
   },
   created () {

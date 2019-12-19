@@ -4,12 +4,12 @@
         <div class="col-12 mt-2 title">
           <h4>熱賣商品</h4>
         </div>
-        <div class="col-12 col-md-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in random4" :key="item.id">
+        <div class="col-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in random4" :key="item.id">
           <div href="#" class="card border-0">
             <img :src="item.image" alt="" class="card-img-top">
             <div class="card-body">
-              <h6 class="card-title" style="height: 36px;">{{item.title}}</h6>
-              <h5 class="card-text" style="height: 20px;">
+              <h6 class="card-title" style="height: 3rem; font-size: 1rem">{{item.title}}</h6>
+              <h5 class="card-text" style="height: 1rem; font-size: 0.8rem">
                 <div class="d-flex justify-content-between align-items-baseline" v-if="item.origin_price !== item.price">
                   <del>原價 {{ item.origin_price }} 元</del>
                   <strong class="float-right text-danger">特價 {{ item.price }} 元</strong>

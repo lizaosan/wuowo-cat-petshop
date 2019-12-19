@@ -3,7 +3,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Main from '../views/Main.vue'
+import Mainpage from '../views/Mainpage.vue'
 import Food from '../views/Food.vue'
 import VueMeta from 'vue-meta'
 
@@ -19,8 +19,8 @@ const routes = [
     children: [
       {
         path: '/',
-        name: 'main',
-        component: Main
+        name: 'mainpage',
+        component: Mainpage
       },
       {
         path: '/food',
