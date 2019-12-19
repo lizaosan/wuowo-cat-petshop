@@ -2,7 +2,7 @@
     <div class="container mt-2">
       <div class="row">
         <div class="col-12 mt-2 title">
-          <h4>{{ title }}</h4>
+            <h4>{{ title }}</h4>
         </div>
         <div class="col-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in filteredProducts" :key="item.id">
           <div href="#" class="card border-0">
@@ -25,11 +25,16 @@
           </div>
         </div>
       </div>
+      <Page-Component :get-page="filteredProducts"></Page-Component>
     </div>
 </template>
 
 <script>
+import PageComponent from '@/components/Pagination.vue'
 export default {
+  components: {
+    PageComponent
+  },
   data () {
     return {
       title: '貓咪食品',
