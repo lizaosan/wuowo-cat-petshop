@@ -4,7 +4,7 @@
         <div class="col-12 mt-2 title">
             <h4>{{ title }}</h4>
         </div>
-        <div class="col-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in filteredProducts" :key="item.id">
+        <div class="col-6 col-lg-3 mb-2 pt-3 shade-effect" v-for="item in displayedPosts" :key="item.id">
           <div href="#" class="card border-0">
             <img :src="item.image" alt="" class="card-img-top">
             <div class="card-body">
@@ -25,22 +25,43 @@
           </div>
         </div>
       </div>
-      <Page-Component :get-page="filteredProducts"></Page-Component>
+        <div class="row mt-4">
+            <div class="col-12">
+                <nav aria-label="Page navigation product">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" v-if="currentPage != 1">
+                            <a href="#" @click="currentPage--" class="page-link border-0" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                        </li>
+                        <li class="page-item" v-for="(pageNumber, index) in pages" :key="pageNumber">
+                            <a href="#" class="page-link border-0" :class="{'font-weight-light': index + 1 !== currentPage, 'font-weight-bold': index + 1 == currentPage }" @click="currentPage = pageNumber">{{ pageNumber }}</a>
+                        </li>
+                        <li class="page-item border-0" v-if="currentPage < pages.length">
+                            <a href="#" @click="currentPage++" class="page-link border-0" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-import PageComponent from '@/components/Pagination.vue'
 export default {
-  components: {
-    PageComponent
-  },
   data () {
     return {
       title: '貓咪食品',
       category: 'food',
       products: [],
-      filteredProducts: []
+      filteredProducts: [],
+      currentPage: 1,
+      perPage: 8,
+      pages: []
     }
   },
   methods: {
@@ -58,10 +79,30 @@ export default {
         return item.category === '貓咪食品'
       })
       // 陣列內物件回傳參考資料 https://wcc723.github.io/javascript/2017/06/29/es6-native-array/#Array-prototype-filter
+      this.setPages()
+    },
+    setPages () {
+      // 分頁參考 https://codepen.io/parths267/pen/bXbWVv?editors=1010
+      let numberOfPages = Math.ceil(this.filteredProducts.length / this.perPage)
+      for (let i = 1; i <= numberOfPages; i++) {
+        this.pages.push(i)
+      }
+    },
+    paginate (filteredProducts) {
+      let currentPage = this.currentPage
+      let perPage = this.perPage
+      let from = (currentPage * perPage) - perPage
+      let to = (currentPage * perPage)
+      return filteredProducts.slice(from, to)
     }
   },
   created () {
     this.getProducts()
+  },
+  computed: {
+    displayedPosts () {
+      return this.paginate(this.filteredProducts)
+    }
   }
 }
 </script>
