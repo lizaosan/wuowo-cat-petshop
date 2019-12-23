@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <div class="container-fluid">
+      <img src="../assets/products-food.jpg" class="img-fluid" alt="">
+    </div>
     <div class="container mt-2">
       <div class="row">
         <div class="col-12 mt-2 title">
@@ -35,10 +39,10 @@
                                 <span class="sr-only">Previous</span>
                             </a>
                         </li>
-                        <li class="page-item" v-for="(pageNumber, index) in pages" :key="pageNumber">
+                        <li class="page-item" v-for="(pageNumber, index) in allPages" :key="pageNumber">
                             <a href="#" class="page-link border-0" :class="{'font-weight-light': index + 1 !== currentPage, 'font-weight-bold': index + 1 == currentPage }" @click="currentPage = pageNumber">{{ pageNumber }}</a>
                         </li>
-                        <li class="page-item border-0" v-if="currentPage < pages.length">
+                        <li class="page-item border-0" v-if="currentPage < allPages.length">
                             <a href="#" @click="currentPage++" class="page-link border-0" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Next</span>
@@ -49,6 +53,7 @@
             </div>
         </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -61,7 +66,7 @@ export default {
       filteredProducts: [],
       currentPage: 1,
       perPage: 8,
-      pages: []
+      allPages: []
     }
   },
   methods: {
@@ -85,7 +90,7 @@ export default {
       // 分頁參考 https://codepen.io/parths267/pen/bXbWVv?editors=1010
       let numberOfPages = Math.ceil(this.filteredProducts.length / this.perPage)
       for (let i = 1; i <= numberOfPages; i++) {
-        this.pages.push(i)
+        this.allPages.push(i)
       }
     },
     paginate (filteredProducts) {

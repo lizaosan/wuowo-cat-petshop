@@ -4,7 +4,7 @@ import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Mainpage from '../views/Mainpage.vue'
-import Food from '../views/Food.vue'
+import Products from '../views/Products.vue'
 import VueMeta from 'vue-meta'
 
 Vue.use(VueRouter)
@@ -23,9 +23,9 @@ const routes = [
         component: Mainpage
       },
       {
-        path: '/food',
-        name: 'food',
-        component: Food
+        path: '/products',
+        name: 'products',
+        component: Products
       }
     ]
   },

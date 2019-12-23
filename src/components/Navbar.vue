@@ -19,19 +19,19 @@
             <div class="collapse navbar-collapse order-sm-2 order-md-1" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item mr-4">
-                        <router-link class="nav-link text-primary" @click.native="paw = 'food'" to="/food">
-                            <i class="fas" :class="{'fa-paw': paw == 'food'}"></i> 貓咪食品
+                        <router-link class="nav-link text-primary" @click.native="paw = 'food'" to="/products">
+                            <i class="fas" :class="{'fa-paw': paw == 'food'}"></i> <small :class="{'font-weight-bold': paw == 'food'}">貓咪食品</small>
                         </router-link>
                     </li>
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-primary" @click="paw = 'supply'" href="#">
-                            <i class="fas" :class="{'fa-paw': paw == 'supply'}"></i> 貓咪居家
-                        </a>
+                        <router-link class="nav-link text-primary" @click.native="paw = 'supply'" to="/products">
+                            <i class="fas" :class="{'fa-paw': paw == 'supply'}"></i> <small :class="{'font-weight-bold': paw == 'supply'}">貓咪居家</small>
+                        </router-link>
                     </li>
                     <li class="nav-item mr-4">
-                        <a class="nav-link text-primary" @click="paw = 'clean'" href="#">
-                            <i class="fas" :class="{'fa-paw': paw == 'clean'}"></i> 貓咪清潔
-                        </a>
+                        <router-link class="nav-link text-primary" @click.native="paw = 'clean'" to="/products">
+                            <i class="fas" :class="{'fa-paw': paw == 'clean'}"></i> <small :class="{'font-weight-bold': paw == 'clean'}">貓咪清潔</small>
+                        </router-link>
                     </li>
                 </ul>
             </div>
