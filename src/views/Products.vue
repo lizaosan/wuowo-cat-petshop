@@ -103,6 +103,10 @@ export default {
   },
   created () {
     this.getProducts()
+    const vm = this
+    vm.$bus.$on('categoryChangedEvent', (msg) => {
+      console.log(msg)
+    })
   },
   computed: {
     displayedPosts () {

@@ -45,6 +45,9 @@ export default {
     return {
       paw: ''
     }
+  },
+  created () {
+    this.$bus.$emit('categoryChangedEvent', '這裡是一段訊息')
   }
 }
 </script>

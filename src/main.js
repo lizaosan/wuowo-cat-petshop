@@ -6,6 +6,7 @@ import 'bootstrap'
 /* 以上是 npm 下載套件 */
 import App from './App.vue'
 import router from './router'
+import './bus'
 /* 以上是網站的內容 */
 
 Vue.use(VueAxios, axios)
